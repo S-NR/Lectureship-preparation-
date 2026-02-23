@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Electronics - Semiconductor Basics</title>
+
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #f1f5f9;
+            --accent: #38bdf8;
+            --table-border: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header h3 {
+            margin: 5px 0 0 0;
+            font-weight: 400;
+            color: #cbd5e1;
+        }
+
+        section {
+            padding: 30px;
+            margin: 25px auto;
+            width: 90%;
+            max-width: 1000px;
+            background: var(--card-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #7dd3fc;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            background: white;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid var(--table-border);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #0ea5e9;
+            color: white;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #020617;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* Smooth Fade Animation */
+        section {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+            }
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Analog Electronics</h1>
+    <h3>Semiconductor Basics</h3>
+</header>
+
+<section>
+    <h2>1. Energy Band Theory</h2>
+    <p>
+        In solids, electrons occupy specific energy levels forming bands. The two important bands are:
+        <strong>Valence Band</strong> and <strong>Conduction Band</strong>. The energy difference between them is called <strong>Band Gap (Eg)</strong>.
+    </p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Band_structure_conductor_insulator_semiconductor.svg" alt="Energy Band Diagram">
+
+    <table>
+        <tr>
+            <th>Material</th>
+            <th>Band Gap</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>Conductor</td>
+            <td>0 eV</td>
+            <td>Copper</td>
+        </tr>
+        <tr>
+            <td>Semiconductor</td>
+            <td>~1 eV</td>
+            <td>Silicon</td>
+        </tr>
+        <tr>
+            <td>Insulator</td>
+            <td>Large</td>
+            <td>Glass</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>2. Intrinsic Semiconductor</h2>
+    <p>
+        Pure semiconductor material without any impurity is called intrinsic semiconductor.
+        Number of electrons = Number of holes.
+    </p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Intrinsic_semiconductor.svg" alt="Intrinsic Semiconductor">
+</section>
+
+<section>
+    <h2>3. Extrinsic Semiconductor (Doping)</h2>
+    <p>
+        When impurities are added to improve conductivity, it is called doping.
+    </p>
+
+    <h3>N-Type Semiconductor</h3>
+    <p>Formed by adding pentavalent impurity (e.g., Phosphorus). Majority carriers are electrons.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/N-type_semiconductor.svg" alt="N Type Semiconductor">
+
+    <h3>P-Type Semiconductor</h3>
+    <p>Formed by adding trivalent impurity (e.g., Boron). Majority carriers are holes.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/P-type_semiconductor.svg" alt="P Type Semiconductor">
+</section>
+
+<section>
+    <h2>4. Important Formulas</h2>
+    <ul>
+        <li><strong>Current Density:</strong> J = nqμE</li>
+        <li><strong>Drift Current:</strong> I = nqμAE</li>
+        <li><strong>Conductivity:</strong> σ = nqμ</li>
+        <li><strong>Mass Action Law:</strong> np = ni²</li>
+    </ul>
+</section>
+
+<section>
+    <h2>5. Exam Important Points</h2>
+    <ul>
+        <li>Band gap of Silicon ≈ 1.1 eV at room temperature</li>
+        <li>Intrinsic Fermi level lies near mid-gap</li>
+        <li>In N-type, Fermi level shifts towards conduction band</li>
+        <li>In P-type, Fermi level shifts towards valence band</li>
+    </ul>
+</section>
+
+<footer>
+    Prepared for Lecturer Exam Preparation | Analog Electronics
+</footer>
+
+</body>
+</html>
