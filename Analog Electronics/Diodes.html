@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Electronics - PN Junction Diode</title>
+
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #f1f5f9;
+            --accent: #38bdf8;
+            --table-border: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header h3 {
+            margin: 5px 0 0 0;
+            font-weight: 400;
+            color: #cbd5e1;
+        }
+
+        section {
+            padding: 30px;
+            margin: 25px auto;
+            width: 90%;
+            max-width: 1000px;
+            background: var(--card-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+        }
+
+        h3 { color: #7dd3fc; }
+
+        svg {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid var(--table-border);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #0ea5e9;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #020617;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 24px; }
+            section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Analog Electronics</h1>
+    <h3>PN Junction Diode</h3>
+</header>
+
+<section>
+    <h2>1. PN Junction Formation</h2>
+    <p>When P-type and N-type materials are joined, diffusion of carriers creates a depletion region and barrier potential.</p>
+
+    <svg width="600" height="250">
+        <rect x="50" y="80" width="200" height="100" fill="#ffcccc" stroke="black"/>
+        <rect x="250" y="80" width="200" height="100" fill="#cce5ff" stroke="black"/>
+        <rect x="240" y="80" width="20" height="100" fill="#dddddd" stroke="black"/>
+        <text x="130" y="140" fill="black">P-Type</text>
+        <text x="310" y="140" fill="black">N-Type</text>
+        <text x="225" y="70" fill="black">Depletion Region</text>
+    </svg>
+
+    <table>
+        <tr>
+            <th>Material</th>
+            <th>Barrier Voltage</th>
+        </tr>
+        <tr>
+            <td>Silicon</td>
+            <td>~0.7 V</td>
+        </tr>
+        <tr>
+            <td>Germanium</td>
+            <td>~0.3 V</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>2. Forward Bias</h2>
+    <p>P connected to positive terminal and N connected to negative terminal. Depletion region width decreases.</p>
+
+    <svg width="500" height="200">
+        <line x1="50" y1="100" x2="450" y2="100" stroke="black" stroke-width="2"/>
+        <polygon points="200,80 200,120 240,100" fill="black"/>
+        <line x1="240" y1="80" x2="240" y2="120" stroke="black" stroke-width="3"/>
+        <text x="60" y="90" fill="black">+</text>
+        <text x="430" y="90" fill="black">-</text>
+    </svg>
+</section>
+
+<section>
+    <h2>3. Reverse Bias</h2>
+    <p>P connected to negative terminal and N connected to positive terminal. Depletion region widens.</p>
+
+    <svg width="500" height="200">
+        <line x1="50" y1="100" x2="450" y2="100" stroke="black" stroke-width="2"/>
+        <polygon points="200,80 200,120 240,100" fill="black"/>
+        <line x1="240" y1="80" x2="240" y2="120" stroke="black" stroke-width="3"/>
+        <text x="60" y="90" fill="black">-</text>
+        <text x="430" y="90" fill="black">+</text>
+    </svg>
+</section>
+
+<section>
+    <h2>4. Diode Current Equation</h2>
+    <p><strong>I = Is ( e^(V / ηVt) - 1 )</strong></p>
+    <ul>
+        <li>Is = Reverse saturation current</li>
+        <li>Vt ≈ 26mV at 300K</li>
+        <li>η = Ideality factor</li>
+    </ul>
+</section>
+
+<section>
+    <h2>5. V-I Characteristics</h2>
+
+    <svg width="500" height="300">
+        <line x1="250" y1="20" x2="250" y2="280" stroke="black"/>
+        <line x1="50" y1="150" x2="450" y2="150" stroke="black"/>
+        <path d="M250 150 Q300 120 350 50" stroke="red" fill="none" stroke-width="2"/>
+        <path d="M250 150 Q200 160 100 170" stroke="blue" fill="none" stroke-width="2"/>
+        <text x="360" y="60" fill="black">Forward Region</text>
+        <text x="70" y="180" fill="black">Reverse Region</text>
+    </svg>
+</section>
+
+<section>
+    <h2>6. Breakdown Mechanisms</h2>
+    <ul>
+        <li><strong>Zener Breakdown:</strong> Heavily doped, low breakdown voltage.</li>
+        <li><strong>Avalanche Breakdown:</strong> Lightly doped, high breakdown voltage.</li>
+    </ul>
+</section>
+
+<footer>
+    Prepared for Lecturer Exam Preparation | Analog Electronics
+</footer>
+
+</body>
+</html>
